@@ -1,0 +1,14 @@
+Quản lý đơn hàng – State Pattern
+- Mỗi đơn hàng có nhiều trạng thái: Mới tạo → Đang xử lý → Đã giao → Hủy
+- Mỗi trạng thái có hành vi riêng, và chúng có thể thay đổi linh hoạt mà không sửa code chính của Order
+---
+
+Tính toán thuế – Strategy Pattern  
+- Có nhiều cách tính thuế khác nhau (VAT, thuế tiêu thụ, thuế xa xỉ), mỗi sản phẩm có thể áp dụng một loại thuế khác nhau
+- Strategy Pattern giúp thay đổi thuật toán tính thuế dễ dàng mà không cần sửa code chính của sản phẩm
+---
+
+Thanh toán với các tính năng bổ sung – Decorator Pattern  
+- Có nhiều phương thức thanh toán (Thẻ tín dụng, PayPal), và có thể thêm tính năng bổ sung (Phí xử lý, Mã giảm giá)  
+- Decorator Pattern giúp mở rộng tính năng thanh toán mà không sửa đổi lớp chính, chỉ cần thêm các tính năng cần thiết
+- Dễ dàng kết hợp nhiều tính năng mà không làm code bị cồng kềnh

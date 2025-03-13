@@ -1,15 +1,18 @@
 package strategy;
 
-public class Main {
+public class StrategyTest {
 	public static void main(String[] args) {
 		Order order = new Order();
-		order.handleRequest(); // Kiểm tra thông tin đơn hàng
+		// Kiểm tra thông tin đơn hàng
+		order.handleRequest(); 
 
+		// Đóng gói và vận chuyển
 		order.setStrategy(new PackAndShipOrderStrategy());
-		order.handleRequest(); // Đóng gói và vận chuyển
+		order.handleRequest(); 
 
+		// Cập nhật trạng thái đã giao
 		order.setStrategy(new UpdateOrderStatusStrategy());
-		order.handleRequest(); // Cập nhật trạng thái đã giao
+		order.handleRequest(); 
 
 		// Tạo đơn hàng hủy
 		Order cancelledOrder = new Order();
