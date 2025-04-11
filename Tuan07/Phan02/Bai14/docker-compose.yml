@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  node-app:
+    build: .
+    depends_on:
+      - redis
+    networks:
+      - private-net
+    ports:
+      - "3000:3000"
+
+  redis:
+    image: redis:latest
+    networks:
+      - private-net
+
+networks:
+  private-net:
+    driver: bridge
+
+# docker compose up -d --build
+# http://localhost:3000
+
