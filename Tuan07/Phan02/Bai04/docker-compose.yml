@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  node-app:
+    build: .
+    container_name: node-simple
+    ports:
+      - "3000:3000"
+    restart: always
+
+# docker compose up -d --build
+# http://localhost:3000

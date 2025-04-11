@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    container_name: adminer-ui
+    restart: always
+    ports:
+      - "8083:8080"
+    depends_on:
+      - postgres
+
+volumes:
+  pgdata:
+# docker compose up -d
+# http://localhost:8083
+# Trường	  Giá trị nhập
+# System	  PostgreSQL
+# Server	  postgres 
+# Username	user
+# Password	password
+# Database	mydb

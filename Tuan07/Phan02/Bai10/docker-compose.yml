@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-persistent
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql  # volume được mount vào thư mục chứa dữ liệu trong container
+
+volumes:
+  mysql_data:
+# docker compose up -d
+# docker exec -it mysql-persistent mysql -uuser -ppassword mydb
+
